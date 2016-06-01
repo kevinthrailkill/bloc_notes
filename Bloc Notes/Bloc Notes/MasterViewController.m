@@ -11,6 +11,8 @@
 #import "DataController.h"
 #import "Note.h"
 #import "flurry.h"
+#import "NoteTableViewCell.h"
+
 
 
 
@@ -98,8 +100,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    NoteTableViewCell *cell = (NoteTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     Note *note = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    
     [self configureCell:cell withObject:note];
     return cell;
 }
@@ -124,8 +127,21 @@
     }
 }
 
-- (void)configureCell:(UITableViewCell *)cell withObject:(Note *)note {
-    cell.textLabel.text = [[note valueForKey:@"timeStamp"] description];
+- (void)configureCell:(NoteTableViewCell *)cell withObject:(Note *)note {
+    
+    cell.titleLabel.text = @"Note 1";
+    
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MMM dd, yyyy hh:mm:ss a"];
+    NSString *stringFromDate = [dateFormatter stringFromDate:[note valueForKey:@"last_modified"]];
+    
+    
+    
+    cell.updatedRecentlyLabel.text = [NSString stringWithFormat:@"Last Updated: %@", stringFromDate];
+    
+    
+    
 }
 
 #pragma mark - Fetched results controller
