@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "MasterViewController.h"
 #import "DataController.h"
+#import "Flurry.h"
 
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
@@ -34,8 +35,12 @@
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
 
-    UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
-    MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
+        
+    
+    
+    //init Flurry
+    [Flurry startSession:[DataController sharedInstance].flurryAccessToken];
+    
     return YES;
 }
 
@@ -66,7 +71,7 @@
 #pragma mark - Split view
 
 - (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
-    if ([secondaryViewController isKindOfClass:[UINavigationController class]] && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[DetailViewController class]] && ([(DetailViewController *)[(UINavigationController *)secondaryViewController topViewController] detailItem] == nil)) {
+    if ([secondaryViewController isKindOfClass:[UINavigationController class]] && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[DetailViewController class]] && ([(DetailViewController *)[(UINavigationController *)secondaryViewController topViewController] note] == nil)) {
         // Return YES to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
         return YES;
     } else {

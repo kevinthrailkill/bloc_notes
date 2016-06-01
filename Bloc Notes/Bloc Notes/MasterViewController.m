@@ -10,6 +10,9 @@
 #import "DetailViewController.h"
 #import "DataController.h"
 #import "Note.h"
+#import "flurry.h"
+#import "NoteTableViewCell.h"
+
 
 
 
@@ -47,7 +50,9 @@
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     [note setValue:[NSDate date] forKey:@"timeStamp"];
-    [note setValue:@"this is my body" forKey:@"body"];
+    [note setValue:[NSDate date] forKey:@"last_modified"];
+    [note setValue:@"" forKey:@"body"];
+    [note setValue:@"" forKey:@"title"];
 
     
     // Save the context.
@@ -58,16 +63,26 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+    
+    [Flurry logEvent:@"Note Created"];
+    
+    [self performSegueWithIdentifier:@"showDetail" sender:nil];
 }
 
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSIndexPath *indexPath;
+        
+        if(!sender){
+            indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        }else{
+            indexPath = [self.tableView indexPathForSelectedRow];
+        }
         Note *note = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:note];
+        [controller setNote:note];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
@@ -85,8 +100,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    NoteTableViewCell *cell = (NoteTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     Note *note = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    
     [self configureCell:cell withObject:note];
     return cell;
 }
@@ -111,8 +127,21 @@
     }
 }
 
-- (void)configureCell:(UITableViewCell *)cell withObject:(Note *)note {
-    cell.textLabel.text = [[note valueForKey:@"timeStamp"] description];
+- (void)configureCell:(NoteTableViewCell *)cell withObject:(Note *)note {
+    
+    cell.titleLabel.text = @"Note 1";
+    
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MMM dd, yyyy hh:mm:ss a"];
+    NSString *stringFromDate = [dateFormatter stringFromDate:[note valueForKey:@"last_modified"]];
+    
+    
+    
+    cell.updatedRecentlyLabel.text = [NSString stringWithFormat:@"Last Updated: %@", stringFromDate];
+    
+    
+    
 }
 
 #pragma mark - Fetched results controller

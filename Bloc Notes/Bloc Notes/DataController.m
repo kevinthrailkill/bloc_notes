@@ -7,12 +7,23 @@
 //
 
 #import "DataController.h"
+#import <UICKeyChainStore.h>
+
+
+@interface DataController ()
+
+@property (nonatomic, strong) NSString *flurryAccessToken;
+
+
+@end
 
 @implementation DataController
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
+
 
 
 /**
@@ -26,6 +37,32 @@
     });
     return sharedInstance;
 }
+
+
+- (instancetype) init {
+    self = [super init];
+    
+    if (self) {
+        self.flurryAccessToken = [UICKeyChainStore stringForKey:@"access token"];
+        
+        if (!self.flurryAccessToken) {
+            [self registerForAccessTokenNotification];
+        }
+        
+    }
+    
+    return self;
+}
+
+//saving flurry key to keychain
+- (void) registerForAccessTokenNotification {
+    
+    self.flurryAccessToken = @"WYCYW47S4ZQWN23V6T35";
+    [UICKeyChainStore setString:self.flurryAccessToken forKey:@"access token"];
+        
+}
+
+
 
 
 #pragma mark - Core Data stack
