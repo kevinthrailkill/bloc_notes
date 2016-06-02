@@ -17,6 +17,8 @@
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
+@property (strong, nonatomic) UISearchController *searchController;
+
 
 @end
 
