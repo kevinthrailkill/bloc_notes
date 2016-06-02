@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lastUpdatedLabel;
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (strong, nonatomic) UITextField *alertField;
+- (IBAction)shareNote:(id)sender;
 
 @end
 
@@ -141,4 +142,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)shareNote:(id)sender {
+    
+    NSMutableArray *itemsToShare = [NSMutableArray array];
+    
+    
+    
+    if (self.note.title.length > 0) {
+        [itemsToShare addObject:self.note.title];
+    }
+    
+    [itemsToShare addObject:self.createdLabel.text];
+    [itemsToShare addObject:self.lastUpdatedLabel.text];
+    
+    if (self.noteTextView.text.length > 0) {
+        [itemsToShare addObject:self.noteTextView.text];
+    }
+    
+    if (itemsToShare.count > 0) {
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+        [self presentViewController:activityVC animated:YES completion:nil];
+    }
+}
 @end
