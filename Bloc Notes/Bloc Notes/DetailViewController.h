@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "Note.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) Note *note;
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property(nonatomic, strong)UIAlertAction *createAction;
+
+
 
 @end
 

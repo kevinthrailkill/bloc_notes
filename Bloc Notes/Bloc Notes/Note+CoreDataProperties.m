@@ -2,7 +2,7 @@
 //  Note+CoreDataProperties.m
 //  Bloc Notes
 //
-//  Created by Kevin Thrailkill on 5/23/16.
+//  Created by Kevin Thrailkill on 6/1/16.
 //  Copyright © 2016 kevinthrailkill. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,9 +13,10 @@
 
 @implementation Note (CoreDataProperties)
 
-@dynamic timeStamp;
 @dynamic body;
+@dynamic lastModified;
+@dynamic dateCreated;
 @dynamic title;
-@dynamic last_modified;
+@dynamic isNew;
 
 @end

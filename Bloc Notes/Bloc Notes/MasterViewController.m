@@ -30,6 +30,8 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -49,10 +51,12 @@
         
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [note setValue:[NSDate date] forKey:@"timeStamp"];
-    [note setValue:[NSDate date] forKey:@"last_modified"];
+    [note setValue:[NSDate date] forKey:@"dateCreated"];
+    [note setValue:[NSDate date] forKey:@"lastModified"];
     [note setValue:@"" forKey:@"body"];
     [note setValue:@"" forKey:@"title"];
+    [note setValue:[NSNumber numberWithBool:YES] forKey:@"isNew"];
+
 
     
     // Save the context.
@@ -129,15 +133,12 @@
 
 - (void)configureCell:(NoteTableViewCell *)cell withObject:(Note *)note {
     
-    cell.titleLabel.text = @"Note 1";
+    cell.titleLabel.text = [note valueForKey:@"title"];
     
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM dd, yyyy hh:mm:ss a"];
-    NSString *stringFromDate = [dateFormatter stringFromDate:[note valueForKey:@"last_modified"]];
-    
-    
-    
+    NSString *stringFromDate = [dateFormatter stringFromDate:[note valueForKey:@"lastModified"]];
     cell.updatedRecentlyLabel.text = [NSString stringWithFormat:@"Last Updated: %@", stringFromDate];
     
     
@@ -161,7 +162,7 @@
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:NO];
 
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
     

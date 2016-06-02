@@ -17,9 +17,9 @@
 		1923FE0B1CF373A700B42A49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1923FE091CF373A700B42A49 /* LaunchScreen.storyboard */; };
 		1923FE161CF373A700B42A49 /* Bloc_NotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FE151CF373A700B42A49 /* Bloc_NotesTests.m */; };
 		1923FE221CF3A02100B42A49 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FE211CF3A02100B42A49 /* DataController.m */; };
-		1923FE291CF3A82800B42A49 /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FE261CF3A82800B42A49 /* Note+CoreDataProperties.m */; };
-		1923FE2A1CF3A82800B42A49 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FE281CF3A82800B42A49 /* Note.m */; };
 		1923FE2D1CFF707100B42A49 /* NoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FE2C1CFF707100B42A49 /* NoteTableViewCell.m */; };
+		1923FE321CFF813100B42A49 /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FE2F1CFF813100B42A49 /* Note+CoreDataProperties.m */; };
+		1923FE331CFF813100B42A49 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FE311CFF813100B42A49 /* Note.m */; };
 		A010BADA1ED3689990FEAE1A /* libPods-Bloc Notes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DBEF39969D2E800C271EA /* libPods-Bloc Notes.a */; };
 		CCA3CA6772CFEADB109F9FB5 /* libPods-Bloc NotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C638AC557C2E538CBA1C2A05 /* libPods-Bloc NotesTests.a */; };
 /* End PBXBuildFile section */
@@ -54,12 +54,12 @@
 		1923FE171CF373A700B42A49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1923FE201CF3A02100B42A49 /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
 		1923FE211CF3A02100B42A49 /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
-		1923FE251CF3A82800B42A49 /* Note+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+CoreDataProperties.h"; sourceTree = "<group>"; };
-		1923FE261CF3A82800B42A49 /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
-		1923FE271CF3A82800B42A49 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
-		1923FE281CF3A82800B42A49 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		1923FE2B1CFF707100B42A49 /* NoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteTableViewCell.h; sourceTree = "<group>"; };
 		1923FE2C1CFF707100B42A49 /* NoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteTableViewCell.m; sourceTree = "<group>"; };
+		1923FE2E1CFF813100B42A49 /* Note+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+CoreDataProperties.h"; sourceTree = "<group>"; };
+		1923FE2F1CFF813100B42A49 /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
+		1923FE301CFF813100B42A49 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		1923FE311CFF813100B42A49 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		1F16EEE24EB3F08569E82957 /* Pods-Bloc NotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloc NotesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bloc NotesTests/Pods-Bloc NotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		C638AC557C2E538CBA1C2A05 /* libPods-Bloc NotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bloc NotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA4F4AF7BA26F24495A793B /* Pods-Bloc NotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloc NotesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bloc NotesTests/Pods-Bloc NotesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,10 +167,10 @@
 		1923FE241CF3A07700B42A49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1923FE251CF3A82800B42A49 /* Note+CoreDataProperties.h */,
-				1923FE261CF3A82800B42A49 /* Note+CoreDataProperties.m */,
-				1923FE271CF3A82800B42A49 /* Note.h */,
-				1923FE281CF3A82800B42A49 /* Note.m */,
+				1923FE2E1CFF813100B42A49 /* Note+CoreDataProperties.h */,
+				1923FE2F1CFF813100B42A49 /* Note+CoreDataProperties.m */,
+				1923FE301CFF813100B42A49 /* Note.h */,
+				1923FE311CFF813100B42A49 /* Note.m */,
 				1923FDFB1CF373A700B42A49 /* Bloc_Notes.xcdatamodeld */,
 				1923FE201CF3A02100B42A49 /* DataController.h */,
 				1923FE211CF3A02100B42A49 /* DataController.m */,
@@ -386,15 +386,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1923FE331CFF813100B42A49 /* Note.m in Sources */,
 				1923FE031CF373A700B42A49 /* DetailViewController.m in Sources */,
 				1923FE001CF373A700B42A49 /* MasterViewController.m in Sources */,
-				1923FE291CF3A82800B42A49 /* Note+CoreDataProperties.m in Sources */,
 				1923FDFA1CF373A700B42A49 /* AppDelegate.m in Sources */,
 				1923FDFD1CF373A700B42A49 /* Bloc_Notes.xcdatamodeld in Sources */,
 				1923FDF71CF373A700B42A49 /* main.m in Sources */,
+				1923FE321CFF813100B42A49 /* Note+CoreDataProperties.m in Sources */,
 				1923FE2D1CFF707100B42A49 /* NoteTableViewCell.m in Sources */,
 				1923FE221CF3A02100B42A49 /* DataController.m in Sources */,
-				1923FE2A1CF3A82800B42A49 /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
