@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lastUpdatedLabel;
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (strong, nonatomic) UITextField *alertField;
+
+
+
 - (IBAction)shareNote:(id)sender;
 
 @end
@@ -96,6 +99,14 @@
         
         
         self.noteTextView.text = [[self.note valueForKey:@"body"] description];
+        self.noteTextView.delegate = self;
+        
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(editTextRecognizerTabbed:)];
+        recognizer.delegate = self;
+        recognizer.numberOfTapsRequired = 1;
+        [self.noteTextView addGestureRecognizer:recognizer];
+        
+        
     }
 }
 
@@ -105,6 +116,19 @@
     NSString *finalString = [textField.text stringByReplacingCharactersInRange:range withString:string];
     [self.createAction setEnabled:(finalString.length >= 1)];
     return YES;
+}
+
+- (void) editTextRecognizerTabbed:(UITapGestureRecognizer *) aRecognizer;
+{
+    self.noteTextView.dataDetectorTypes = UIDataDetectorTypeNone;
+    self.noteTextView.editable = YES;
+    [self.noteTextView becomeFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView;
+{
+    self.noteTextView.editable = NO;
+    self.noteTextView.dataDetectorTypes = UIDataDetectorTypeAll;
 }
 
 - (void)viewDidLoad {
