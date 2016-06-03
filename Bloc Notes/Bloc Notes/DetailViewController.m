@@ -118,6 +118,10 @@
     return YES;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
 - (void) editTextRecognizerTabbed:(UITapGestureRecognizer *) aRecognizer;
 {
     self.noteTextView.dataDetectorTypes = UIDataDetectorTypeNone;
