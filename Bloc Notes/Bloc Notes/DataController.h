@@ -28,7 +28,6 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
-- (BOOL)iCloudAccountIsSignedIn;
 
 
 

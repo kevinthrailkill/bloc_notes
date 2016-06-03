@@ -143,18 +143,5 @@
     }
 }
 
-#pragma mark - iCloud
-- (BOOL)iCloudAccountIsSignedIn {
-    NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    id token = [[NSFileManager defaultManager] ubiquityIdentityToken];
-    if (token) {
-        NSLog(@"----iCloud is Logged In with token '%@' ----", token);
-        return YES;
-    }
-    NSLog(@"---- iCloud is NOT Logged In ----");
-    NSLog(@"Check these: Is iCloud Documents and Data enabled??? (Mac, IOS Device)--- iCloud Capability -App Target, ---- Code Sign Entitlements Error??");
-    return NO;
-}
-
 
 @end
