@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Note.h"
 
-@interface DetailViewController : UIViewController <UITextFieldDelegate>
+@interface DetailViewController : UIViewController <UITextFieldDelegate, UIGestureRecognizerDelegate, UITextViewDelegate>
 
 @property (strong, nonatomic) Note *note;
 @property(nonatomic, strong)UIAlertAction *createAction;
