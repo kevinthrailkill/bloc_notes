@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 
 
+
 @interface DataController : NSObject
 
 
@@ -29,6 +30,8 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 - (void)registerForiCloudNotifications;
+-(void)saveDataForShareExtension: (NSString *)noteTitle andText:(NSString *)noteText;
+
 
 
 

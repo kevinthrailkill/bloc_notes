@@ -7,6 +7,7 @@
 //
 
 #import "DataController.h"
+#import "Note.h"
 #import <UICKeyChainStore.h>
 
 
@@ -184,7 +185,7 @@
 }
 
 - (void)storesDidChange:(NSNotification *)note {
-        [self migrateLocalStoreToiCloudStore]; //an attempt to alliviate issues
+   //     [self migrateLocalStoreToiCloudStore]; //an attempt to alliviate issues
     [[NSNotificationCenter defaultCenter] postNotificationName:@"storesDidChangeNotification" object:nil];
 }
 
@@ -298,6 +299,37 @@
         }
     }
 }
+
+#pragma mark - Save Data
+
+-(void)saveDataForShareExtension: (NSString *)noteTitle andText:(NSString *)noteText {
+        NSManagedObjectContext *context = [self managedObjectContext];
+    
+        Note *newNote = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:context];
+    
+    
+        [newNote setValue:[NSDate date] forKey:@"dateCreated"];
+        [newNote setValue:[NSDate date] forKey:@"lastModified"];
+        [newNote setValue:noteText forKey:@"body"];
+        [newNote setValue:noteTitle forKey:@"title"];
+        [newNote setValue:[NSNumber numberWithBool:NO] forKey:@"isNew"];
+
+    
+    
+    // Save the context.
+    NSError *error = nil;
+    if (![context save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+
+    
+    
+}
+
 
 
 @end
