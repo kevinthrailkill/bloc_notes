@@ -28,6 +28,8 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+- (void)registerForiCloudNotifications;
+
 
 
 
