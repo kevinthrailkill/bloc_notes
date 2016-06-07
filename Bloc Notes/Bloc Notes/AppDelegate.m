@@ -13,6 +13,7 @@
 #import "Flurry.h"
 
 
+
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
 @end
@@ -27,7 +28,8 @@
     
     
     //Singleton DataController Created
-    [[DataController sharedInstance] registerForiCloudNotifications];
+    [DataController sharedInstance];
+    //[[DataController sharedInstance] registerForiCloudNotifications];
     
     // Override point for customization after application launch.
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;

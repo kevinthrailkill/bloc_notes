@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1306EBB2A270BA4198F027F0 /* libPods-Bloc Notes-Bloc Notes Share.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDDDCB02C7D9F9B3C0D3D35 /* libPods-Bloc Notes-Bloc Notes Share.a */; };
 		1923FDF71CF373A700B42A49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FDF61CF373A700B42A49 /* main.m */; };
 		1923FDFA1CF373A700B42A49 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FDF91CF373A700B42A49 /* AppDelegate.m */; };
 		1923FDFD1CF373A700B42A49 /* Bloc_Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1923FDFB1CF373A700B42A49 /* Bloc_Notes.xcdatamodeld */; };
@@ -20,7 +21,12 @@
 		1923FE2D1CFF707100B42A49 /* NoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FE2C1CFF707100B42A49 /* NoteTableViewCell.m */; };
 		1923FE321CFF813100B42A49 /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FE2F1CFF813100B42A49 /* Note+CoreDataProperties.m */; };
 		1923FE331CFF813100B42A49 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FE311CFF813100B42A49 /* Note.m */; };
-		19962A321D074BA8002F428E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19962A311D074BA8002F428E /* CloudKit.framework */; };
+		19962A651D075C44002F428E /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19962A641D075C44002F428E /* ShareViewController.m */; };
+		19962A681D075C44002F428E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19962A661D075C44002F428E /* MainInterface.storyboard */; };
+		19962A6C1D075C44002F428E /* Bloc Notes Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 19962A611D075C44002F428E /* Bloc Notes Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		19962A791D076623002F428E /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FE211CF3A02100B42A49 /* DataController.m */; };
+		19962A7A1D076627002F428E /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FE311CFF813100B42A49 /* Note.m */; };
+		19962A7F1D07691B002F428E /* Bloc_Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1923FDFB1CF373A700B42A49 /* Bloc_Notes.xcdatamodeld */; };
 		A010BADA1ED3689990FEAE1A /* libPods-Bloc Notes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DBEF39969D2E800C271EA /* libPods-Bloc Notes.a */; };
 		CCA3CA6772CFEADB109F9FB5 /* libPods-Bloc NotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C638AC557C2E538CBA1C2A05 /* libPods-Bloc NotesTests.a */; };
 /* End PBXBuildFile section */
@@ -33,10 +39,32 @@
 			remoteGlobalIDString = 1923FDF11CF373A700B42A49;
 			remoteInfo = "Bloc Notes";
 		};
+		19962A6A1D075C44002F428E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1923FDEA1CF373A700B42A49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19962A601D075C44002F428E;
+			remoteInfo = "Bloc Notes Share";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		19962A461D075A7A002F428E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				19962A6C1D075C44002F428E /* Bloc Notes Share.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		03679D5D7A8361DFE34B39BD /* Pods-Bloc Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloc Notes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bloc Notes/Pods-Bloc Notes.debug.xcconfig"; sourceTree = "<group>"; };
+		1022A482E1D189FF1D544F8C /* Pods-Bloc Notes-Bloc Notes Share.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloc Notes-Bloc Notes Share.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bloc Notes-Bloc Notes Share/Pods-Bloc Notes-Bloc Notes Share.debug.xcconfig"; sourceTree = "<group>"; };
 		1923FDF21CF373A700B42A49 /* Bloc Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bloc Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1923FDF61CF373A700B42A49 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1923FDF81CF373A700B42A49 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,11 +90,20 @@
 		1923FE301CFF813100B42A49 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		1923FE311CFF813100B42A49 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		196983B61D00F4860056DC11 /* Bloc Notes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Bloc Notes.entitlements"; sourceTree = "<group>"; };
-		19962A311D074BA8002F428E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		19962A611D075C44002F428E /* Bloc Notes Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Bloc Notes Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19962A631D075C44002F428E /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		19962A641D075C44002F428E /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		19962A671D075C44002F428E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		19962A691D075C44002F428E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19962A701D075C4C002F428E /* Bloc Notes Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Bloc Notes Share.entitlements"; sourceTree = "<group>"; };
+		19962A771D07661C002F428E /* libPods-Bloc Notes.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Bloc Notes.a"; path = "../../../../../../Library/Developer/Xcode/DerivedData/Bloc_Notes-gkbhvckrajigkehgkgzgyfnawakz/Build/Products/Debug-iphonesimulator/libPods-Bloc Notes.a"; sourceTree = "<group>"; };
+		19962A7B1D07666B002F428E /* libUICKeyChainStore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUICKeyChainStore.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/Bloc_Notes-gkbhvckrajigkehgkgzgyfnawakz/Build/Products/Debug-iphonesimulator/UICKeyChainStore/libUICKeyChainStore.a"; sourceTree = "<group>"; };
 		1F16EEE24EB3F08569E82957 /* Pods-Bloc NotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloc NotesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bloc NotesTests/Pods-Bloc NotesTests.release.xcconfig"; sourceTree = "<group>"; };
+		4EDDDCB02C7D9F9B3C0D3D35 /* libPods-Bloc Notes-Bloc Notes Share.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bloc Notes-Bloc Notes Share.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C638AC557C2E538CBA1C2A05 /* libPods-Bloc NotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bloc NotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA4F4AF7BA26F24495A793B /* Pods-Bloc NotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloc NotesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bloc NotesTests/Pods-Bloc NotesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2C80034A3C0D04C7A3A8AE2 /* Pods-Bloc Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloc Notes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bloc Notes/Pods-Bloc Notes.release.xcconfig"; sourceTree = "<group>"; };
+		EB170064592DABE56DC85489 /* Pods-Bloc Notes-Bloc Notes Share.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloc Notes-Bloc Notes Share.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bloc Notes-Bloc Notes Share/Pods-Bloc Notes-Bloc Notes Share.release.xcconfig"; sourceTree = "<group>"; };
 		EF1DBEF39969D2E800C271EA /* libPods-Bloc Notes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bloc Notes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -76,7 +113,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A010BADA1ED3689990FEAE1A /* libPods-Bloc Notes.a in Frameworks */,
-				19962A321D074BA8002F428E /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +121,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCA3CA6772CFEADB109F9FB5 /* libPods-Bloc NotesTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19962A5E1D075C44002F428E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1306EBB2A270BA4198F027F0 /* libPods-Bloc Notes-Bloc Notes Share.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +142,8 @@
 				E2C80034A3C0D04C7A3A8AE2 /* Pods-Bloc Notes.release.xcconfig */,
 				DBA4F4AF7BA26F24495A793B /* Pods-Bloc NotesTests.debug.xcconfig */,
 				1F16EEE24EB3F08569E82957 /* Pods-Bloc NotesTests.release.xcconfig */,
+				1022A482E1D189FF1D544F8C /* Pods-Bloc Notes-Bloc Notes Share.debug.xcconfig */,
+				EB170064592DABE56DC85489 /* Pods-Bloc Notes-Bloc Notes Share.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -107,6 +153,7 @@
 			children = (
 				1923FDF41CF373A700B42A49 /* Bloc Notes */,
 				1923FE141CF373A700B42A49 /* Bloc NotesTests */,
+				19962A621D075C44002F428E /* Bloc Notes Share */,
 				1923FDF31CF373A700B42A49 /* Products */,
 				0C6C2612DD4C8D601E2A22FA /* Pods */,
 				7AF6600D81FA46A06B423153 /* Frameworks */,
@@ -118,6 +165,7 @@
 			children = (
 				1923FDF21CF373A700B42A49 /* Bloc Notes.app */,
 				1923FE111CF373A700B42A49 /* Bloc NotesTests.xctest */,
+				19962A611D075C44002F428E /* Bloc Notes Share.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,12 +231,26 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		19962A621D075C44002F428E /* Bloc Notes Share */ = {
+			isa = PBXGroup;
+			children = (
+				19962A701D075C4C002F428E /* Bloc Notes Share.entitlements */,
+				19962A631D075C44002F428E /* ShareViewController.h */,
+				19962A641D075C44002F428E /* ShareViewController.m */,
+				19962A661D075C44002F428E /* MainInterface.storyboard */,
+				19962A691D075C44002F428E /* Info.plist */,
+			);
+			path = "Bloc Notes Share";
+			sourceTree = "<group>";
+		};
 		7AF6600D81FA46A06B423153 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				19962A311D074BA8002F428E /* CloudKit.framework */,
+				19962A7B1D07666B002F428E /* libUICKeyChainStore.a */,
+				19962A771D07661C002F428E /* libPods-Bloc Notes.a */,
 				EF1DBEF39969D2E800C271EA /* libPods-Bloc Notes.a */,
 				C638AC557C2E538CBA1C2A05 /* libPods-Bloc NotesTests.a */,
+				4EDDDCB02C7D9F9B3C0D3D35 /* libPods-Bloc Notes-Bloc Notes Share.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -206,10 +268,12 @@
 				1923FDF01CF373A700B42A49 /* Resources */,
 				227EA6A01B33BA9B9D9BAA45 /* 📦 Embed Pods Frameworks */,
 				6EE9DC5A1FF3EC3A114172DB /* 📦 Copy Pods Resources */,
+				19962A461D075A7A002F428E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				19962A6B1D075C44002F428E /* PBXTargetDependency */,
 			);
 			name = "Bloc Notes";
 			productName = "Bloc Notes";
@@ -237,6 +301,26 @@
 			productReference = 1923FE111CF373A700B42A49 /* Bloc NotesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		19962A601D075C44002F428E /* Bloc Notes Share */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19962A6D1D075C44002F428E /* Build configuration list for PBXNativeTarget "Bloc Notes Share" */;
+			buildPhases = (
+				7235A6280480BCC9B0E7D76E /* 📦 Check Pods Manifest.lock */,
+				19962A5D1D075C44002F428E /* Sources */,
+				19962A5E1D075C44002F428E /* Frameworks */,
+				19962A5F1D075C44002F428E /* Resources */,
+				CDB5CB7B743F68E42CD94BAC /* 📦 Embed Pods Frameworks */,
+				118329A4B2513046107A26C9 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bloc Notes Share";
+			productName = "Bloc Notes Share";
+			productReference = 19962A611D075C44002F428E /* Bloc Notes Share.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -262,6 +346,15 @@
 						CreatedOnToolsVersion = 7.3.1;
 						TestTargetID = 1923FDF11CF373A700B42A49;
 					};
+					19962A601D075C44002F428E = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = YUYDGGZ6SW;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = 1923FDED1CF373A700B42A49 /* Build configuration list for PBXProject "Bloc Notes" */;
@@ -279,6 +372,7 @@
 			targets = (
 				1923FDF11CF373A700B42A49 /* Bloc Notes */,
 				1923FE101CF373A700B42A49 /* Bloc NotesTests */,
+				19962A601D075C44002F428E /* Bloc Notes Share */,
 			);
 		};
 /* End PBXProject section */
@@ -301,9 +395,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		19962A5F1D075C44002F428E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19962A681D075C44002F428E /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		118329A4B2513046107A26C9 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bloc Notes-Bloc Notes Share/Pods-Bloc Notes-Bloc Notes Share-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		227EA6A01B33BA9B9D9BAA45 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,6 +466,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bloc Notes/Pods-Bloc Notes-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7235A6280480BCC9B0E7D76E /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		C67AB94FB46EF64D12FE6717 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,6 +494,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bloc NotesTests/Pods-Bloc NotesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDB5CB7B743F68E42CD94BAC /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bloc Notes-Bloc Notes Share/Pods-Bloc Notes-Bloc Notes Share-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E2E192075CBBDB7DEA6550F3 /* 📦 Check Pods Manifest.lock */ = {
@@ -421,6 +568,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		19962A5D1D075C44002F428E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19962A7F1D07691B002F428E /* Bloc_Notes.xcdatamodeld in Sources */,
+				19962A7A1D076627002F428E /* Note.m in Sources */,
+				19962A791D076623002F428E /* DataController.m in Sources */,
+				19962A651D075C44002F428E /* ShareViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -428,6 +586,11 @@
 			isa = PBXTargetDependency;
 			target = 1923FDF11CF373A700B42A49 /* Bloc Notes */;
 			targetProxy = 1923FE121CF373A700B42A49 /* PBXContainerItemProxy */;
+		};
+		19962A6B1D075C44002F428E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19962A601D075C44002F428E /* Bloc Notes Share */;
+			targetProxy = 19962A6A1D075C44002F428E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -446,6 +609,14 @@
 				1923FE0A1CF373A700B42A49 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		19962A661D075C44002F428E /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19962A671D075C44002F428E /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -589,6 +760,34 @@
 			};
 			name = Release;
 		};
+		19962A6E1D075C44002F428E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1022A482E1D189FF1D544F8C /* Pods-Bloc Notes-Bloc Notes Share.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Bloc Notes Share/Bloc Notes Share.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Bloc Notes Share/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kevinthrailkill.blocnotes.Bloc-Notes-Share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		19962A6F1D075C44002F428E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB170064592DABE56DC85489 /* Pods-Bloc Notes-Bloc Notes Share.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Bloc Notes Share/Bloc Notes Share.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Bloc Notes Share/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kevinthrailkill.blocnotes.Bloc-Notes-Share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -615,6 +814,15 @@
 			buildConfigurations = (
 				1923FE1E1CF373A700B42A49 /* Debug */,
 				1923FE1F1CF373A700B42A49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19962A6D1D075C44002F428E /* Build configuration list for PBXNativeTarget "Bloc Notes Share" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19962A6E1D075C44002F428E /* Debug */,
+				19962A6F1D075C44002F428E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

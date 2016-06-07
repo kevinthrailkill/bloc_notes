@@ -15,4 +15,10 @@ target 'Bloc Notes' do
     # Pods for testing
   end
 
+  target 'Bloc Notes Share' do
+        pod 'AFNetworking'
+  	pod 'UICKeyChainStore'
+ 	pod 'Flurry-iOS-SDK'
+ end
+
 end
