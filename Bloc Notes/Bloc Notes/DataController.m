@@ -152,16 +152,16 @@
                                name:NSPersistentStoreDidImportUbiquitousContentChangesNotification
                              object:self.persistentStoreCoordinator];
     
-    NSError *error;
-    
-    [self.managedObjectContext.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
-                                                                       configuration:nil
-                                                                                 URL:self.storeURL
-                                                                             options:self.iCloudStore
-                                                                               error:&error];
-    if (error) {
-        NSLog(@"error: %@", error);
-    }
+//    NSError *error;
+//    
+//    [self.managedObjectContext.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+//                                                                       configuration:nil
+//                                                                                 URL:self.storeURL
+//                                                                             options:self.iCloudStore
+//                                                                               error:&error];
+//    if (error) {
+//        NSLog(@"error: %@", error);
+//    }
 }
 
 // Subscribe to NSPersistentStoreCoordinatorStoresWillChangeNotification
@@ -185,8 +185,8 @@
 }
 
 - (void)storesDidChange:(NSNotification *)note {
-   //     [self migrateLocalStoreToiCloudStore]; //an attempt to alliviate issues
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"storesDidChangeNotification" object:nil];
+        [self migrateLocalStoreToiCloudStore]; //an attempt to alliviate issues
+   // [[NSNotificationCenter defaultCenter] postNotificationName:@"storesDidChangeNotification" object:nil];
 }
 
 // Subscribe to NSPersistentStoreDidImportUbiquitousContentChangesNotification
