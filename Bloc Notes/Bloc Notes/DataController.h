@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+@class Note;
 
 
 
@@ -30,11 +31,7 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 - (void)registerForiCloudNotifications;
--(void)saveDataForShareExtension: (NSString *)noteTitle andText:(NSString *)noteText;
-
-
-
-
+-(void)saveNote: (Note *)note withTitle: (NSString *)noteTitle andText:(NSString *)noteText andShowTitlePop: (BOOL) isNew;
 
 
 @end
