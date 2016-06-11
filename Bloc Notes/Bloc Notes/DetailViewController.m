@@ -30,9 +30,11 @@
 - (void)setDetailItem:(Note*)newNote {
     if (_note != newNote) {
         _note = newNote;
-            
+        
         // Update the view.
         [self configureView];
+        
+        
     }
 }
 
@@ -43,33 +45,24 @@
         BOOL isNew = [[_note valueForKey:@"isNew"] boolValue];
         
         
+        
         if(isNew){
             //show setup stuff for title and note
             
-            
-//            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
-//                                                             style:UIAlertActionStyleDefault
-//                                                           handler:^(UIAlertAction *action)
-//                                     {
-//                                        [self.navigationController popToRootViewControllerAnimated:YES];
-//                                     }];
-            
-            
-            
             self.createAction = [UIAlertAction actionWithTitle:@"Create Note"
-                                                             style:UIAlertActionStyleDefault
+                                                         style:UIAlertActionStyleDefault
                                                        handler:^(UIAlertAction *action)
                                  {
                                      self.titleField.text = self.alertField.text;
                                      [_note setValue:self.titleField.text forKey:@"title"];
                                  }];
             self.createAction.enabled = NO;
-
+            
             
             
             UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"New Note"
-                                                                    message:nil
-                                                             preferredStyle:UIAlertControllerStyleAlert];
+                                                                                message:nil
+                                                                         preferredStyle:UIAlertControllerStyleAlert];
             
             [controller addTextFieldWithConfigurationHandler:^(UITextField *textField) {
                 textField.delegate = self;
@@ -77,26 +70,24 @@
                 self.alertField = textField;
                 [_note setValue:[NSNumber numberWithBool:NO] forKey:@"isNew"];
             }];
-           // [controller addAction:cancel];
+            // [controller addAction:cancel];
             [controller addAction:self.createAction];
             [self presentViewController:controller animated:YES completion:nil];
             
         }
         
         
-        self.titleField.text = [_note valueForKey:@"title"];
         
+        self.titleField.text = [_note valueForKey:@"title"];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"MMM dd, yyyy hh:mm:ss a"];
-        
         
         NSString *stringFromDate = [dateFormatter stringFromDate:[_note valueForKey:@"lastModified"]];
         self.lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", stringFromDate];
         
         NSString *stringFromDateCreate = [dateFormatter stringFromDate:[_note valueForKey:@"dateCreated"]];
         self.createdLabel.text = [NSString stringWithFormat:@"Created On: %@", stringFromDateCreate];
-        
         
         self.noteTextView.text = [[self.note valueForKey:@"body"] description];
         self.noteTextView.delegate = self;
@@ -106,10 +97,8 @@
         recognizer.numberOfTapsRequired = 1;
         [self.noteTextView addGestureRecognizer:recognizer];
         
-        
     }
 }
-
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
@@ -139,6 +128,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -153,15 +144,7 @@
 -(void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    [_note setValue:self.noteTextView.text forKey:@"body"];
-    [_note setValue:[NSDate date] forKey:@"lastModified"];
-    [_note setValue:self.titleField.text forKey:@"title"];
-    [_note setValue:[NSNumber numberWithBool:NO] forKey:@"isNew"];
-
-
-    
-    [[DataController sharedInstance] saveContext];
-    
+    [[DataController sharedInstance] saveNote:_note withTitle:self.titleField.text andText:self.noteTextView.text andShowTitlePop:NO];
     
 }
 
@@ -173,8 +156,6 @@
 - (IBAction)shareNote:(id)sender {
     
     NSMutableArray *itemsToShare = [NSMutableArray array];
-    
-    
     
     if (self.note.title.length > 0) {
         [itemsToShare addObject:self.note.title];

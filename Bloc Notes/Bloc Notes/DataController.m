@@ -302,19 +302,28 @@
 
 #pragma mark - Save Data
 
--(void)saveDataForShareExtension: (NSString *)noteTitle andText:(NSString *)noteText {
-        NSManagedObjectContext *context = [self managedObjectContext];
+
+-(void)saveNote: (Note *)note withTitle: (NSString *)noteTitle andText:(NSString *)noteText andShowTitlePop: (BOOL) isNew {
     
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    if(note){
+        
+        [note setValue:noteText forKey:@"body"];
+        [note setValue:[NSDate date] forKey:@"lastModified"];
+        [note setValue:noteTitle forKey:@"title"];
+        [note setValue:[NSNumber numberWithBool:isNew] forKey:@"isNew"];
+        
+    }else{
+        
         Note *newNote = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:context];
-    
-    
         [newNote setValue:[NSDate date] forKey:@"dateCreated"];
         [newNote setValue:[NSDate date] forKey:@"lastModified"];
         [newNote setValue:noteText forKey:@"body"];
         [newNote setValue:noteTitle forKey:@"title"];
-        [newNote setValue:[NSNumber numberWithBool:NO] forKey:@"isNew"];
-
+        [newNote setValue:[NSNumber numberWithBool:isNew] forKey:@"isNew"];
     
+    }
     
     // Save the context.
     NSError *error = nil;
@@ -325,11 +334,7 @@
         abort();
     }
     
-
-    
-    
 }
-
 
 
 @end
