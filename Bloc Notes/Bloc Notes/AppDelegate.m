@@ -29,7 +29,7 @@
     
     //Singleton DataController Created
     [DataController sharedInstance];
-    //[[DataController sharedInstance] registerForiCloudNotifications];
+    [[DataController sharedInstance] registerForiCloudNotifications];
     
     // Override point for customization after application launch.
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;

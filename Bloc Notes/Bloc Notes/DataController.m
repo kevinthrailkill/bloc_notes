@@ -134,7 +134,9 @@
 
 #pragma mark - iCloud
 - (void)registerForiCloudNotifications {
+    
     self.iCloudStore = @{ NSPersistentStoreUbiquitousContentNameKey : @"iCloudStore" };
+    
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     
     [notificationCenter addObserver:self

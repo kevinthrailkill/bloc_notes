@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1306EBB2A270BA4198F027F0 /* libPods-Bloc Notes-Bloc Notes Share.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDDDCB02C7D9F9B3C0D3D35 /* libPods-Bloc Notes-Bloc Notes Share.a */; };
+		190CAB4C1D21D7E400FC26BD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 190CAB4B1D21D7E400FC26BD /* CloudKit.framework */; };
 		1923FDF71CF373A700B42A49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FDF61CF373A700B42A49 /* main.m */; };
 		1923FDFA1CF373A700B42A49 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923FDF91CF373A700B42A49 /* AppDelegate.m */; };
 		1923FDFD1CF373A700B42A49 /* Bloc_Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1923FDFB1CF373A700B42A49 /* Bloc_Notes.xcdatamodeld */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		03679D5D7A8361DFE34B39BD /* Pods-Bloc Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloc Notes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bloc Notes/Pods-Bloc Notes.debug.xcconfig"; sourceTree = "<group>"; };
 		1022A482E1D189FF1D544F8C /* Pods-Bloc Notes-Bloc Notes Share.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloc Notes-Bloc Notes Share.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bloc Notes-Bloc Notes Share/Pods-Bloc Notes-Bloc Notes Share.debug.xcconfig"; sourceTree = "<group>"; };
+		190CAB4B1D21D7E400FC26BD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1923FDF21CF373A700B42A49 /* Bloc Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bloc Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1923FDF61CF373A700B42A49 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1923FDF81CF373A700B42A49 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A010BADA1ED3689990FEAE1A /* libPods-Bloc Notes.a in Frameworks */,
+				190CAB4C1D21D7E400FC26BD /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +249,7 @@
 		7AF6600D81FA46A06B423153 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				190CAB4B1D21D7E400FC26BD /* CloudKit.framework */,
 				19962A7B1D07666B002F428E /* libUICKeyChainStore.a */,
 				19962A771D07661C002F428E /* libPods-Bloc Notes.a */,
 				EF1DBEF39969D2E800C271EA /* libPods-Bloc Notes.a */,
